@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCSS.css">
+</head>
+<body>
+    <div class="registration">
+        <h1 align="center">Общие сведения</h1>
+        <p align="center">Укажите вашу дату рождения и пол</p>
+
+        <div class="container" align="center">
+            <input type="tel" name="day" id="day" class="inputDate">
+
+            <select name="month" id="month" class="inputDate">
+                <option value="january">Январь</option>
+                <option value="February">Февраль</option>
+                <option value="March">Март</option>
+                <option value="April">Апрель</option>
+                <option value="May">Май</option>
+                <option value="June">Июнь</option>
+                <option value="July">Июль</option>
+                <option value="August">Август</option>
+                <option value="September">Сентябрь</option>
+                <option value="October">Октябрь</option>
+                <option value="November">Ноябрь</option>
+                <option value="December">Декабрь</option>
+            </select>
+
+            <input type="tel" name="year" id="year" class="inputDate">
+        </div>
+
+        <div>
+            <p><input checked type="radio" name="gender">Мужской</p>
+            <p><input type="radio" name="gender">Женский</p>
+        </div>
+
+        <a  class="button" onclick="ValidDate()" href="email.html">Далее</a>
+    </div>
+    <script src="/registration.js"></script>
+</body>
+</html>
