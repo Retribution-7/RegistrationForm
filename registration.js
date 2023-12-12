@@ -42,3 +42,46 @@ function ValidDate(event){
         event.preventDefault()
     }
 }
+
+function openWarning() {
+    var warning = document.getElementById("warning");
+    warning.classList.add("active");
+  }
+
+function openSuccess(){
+    var success = document.getElementById("success");
+    success.classList.add("active");
+}
+
+function validPassword() {
+    var password = document.getElementById("password").value;
+    var errorMessage = document.getElementById("warning");
+    var passwordAccept = document.getElementById("passwordAccept");
+    if (password.length < 8) {
+      openWarning();
+    } else if (!/[A-Z]/.test(password)) {
+      openWarning();
+    } else if (!/[0-9]/.test(password)) {
+      openWarning();
+    } else {
+      errorMessage.style.display = "none";
+    }
+    if (password != passwordAccept && erroeMessage.style.display != "none") {
+        openSuccess();
+    }
+  }
+
+function checkName(){
+    let input = document.getElementById("name").value;
+    if (input == "") {
+        openWarning();
+    }
+    else {
+        document.getElementById('button').addEventListener('click', () => window.open("BirthdayGender.html"))
+    }
+}
+
+function openWarning() {
+    var warning = document.getElementById("warningName");
+    warning.classList.add("active");
+  }
