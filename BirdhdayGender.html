@@ -37,7 +37,14 @@
             <p><input type="radio" name="gender">Женский</p>
         </div>
 
-        <button class="button" onclick="window.location.href = 'password.html'">Далее</button>
+        <div id="warningDate" class="warning" style="top: 23%; left: 67%">
+            <div align="center">
+                Дата рождения введена некорректно!
+            </div>
+            
+          </div>
+
+        <button class="button" onclick="validDate()">Далее</button>
     </div>
     <script src="/registration.js"></script>
 </body>
