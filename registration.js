@@ -35,53 +35,115 @@ function checkPassword(){
     }
 }
 
-function ValidDate(event){
+function validDate(){
     let day = document.getElementById("day").value;
     let year = document.getElementById("year").value;
-    if (year != '' || day != ''){
-        event.preventDefault()
+    if (year != '' && day != '') {
+        window.location.href = "password.html";
+    }
+    else {
+        openWarningDate();
     }
 }
 
-function openWarning() {
-    var warning = document.getElementById("warning");
+function openWarningDigit() {
+    let input = document.getElementById("password");
+    input.style.animation = "none";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "30px";
+    var warning = document.getElementById("warningDigit");
     warning.classList.add("active");
   }
 
+function openWarningHigherCase() {
+    let input = document.getElementById("password");
+    input.style.animation = "none";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "30px";
+    var warning = document.getElementById("warningHigherCase");
+    warning.classList.add("active");
+  }
+
+function openWarningLength() {
+    let input = document.getElementById("password");
+    input.style.animation = "none";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "30px";
+    var warning = document.getElementById("warningLength");
+    warning.classList.add("active");
+  }
+
+function openWarningSwap() {
+    let passwordAccept = document.getElementById("passwordAccept");
+    let password = document.getElementById("password");
+    passwordAccept.style.animation = "none";
+    passwordAccept.style.borderColor = "red";
+    passwordAccept.style.marginBottom = "30px";
+    password.style.borderColor = "red";
+    var warning = document.getElementById("warningSwap");
+    warning.classList.add("active");
+  }
+  
 function openSuccess(){
     var success = document.getElementById("success");
     success.classList.add("active");
 }
 
-function validPassword() {
+function openWarningName(){
+    let input = document.getElementById("name");
+    input.style.animation = "none";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "30px";
+    var warning = document.getElementById("warningName");
+    warning.classList.add("active");
+}
+
+function openWarningEmail(){
+    let input = document.getElementById("email");
+    input.style.animation = "none";
+    input.style.borderColor = "red";
+    input.style.marginBottom = "30px";
+    var warning = document.getElementById("warningEmail");
+    warning.classList.add("active");
+}
+
+function openWarningDate(){
+    var warning = document.getElementById("warningDate");
+    warning.classList.add("active");
+}
+
+function validPasswordAndEmail() {
     var password = document.getElementById("password").value;
-    var errorMessage = document.getElementById("warning");
+    var errorMessage = document.querySelector("warning");
     var passwordAccept = document.getElementById("passwordAccept");
     if (password.length < 8) {
-      openWarning();
+        errorMessage.style.display = "none";
+        openWarningLength();
     } else if (!/[A-Z]/.test(password)) {
-      openWarning();
+        errorMessage.style.display = "none";
+        openWarningHigherCase();
     } else if (!/[0-9]/.test(password)) {
-      openWarning();
+        errorMessage.style.display = "none";
+        openWarningDigit();
+    } else if (password !== passwordAccept) {
+        openWarningSwap();
     } else {
       errorMessage.style.display = "none";
     }
-    if (password != passwordAccept && erroeMessage.style.display != "none") {
-        openSuccess();
+
+    let email = document.getElementById('email').value;
+    var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!pattern.test(String(email).toLowerCase())) {
+        openWarningEmail();
     }
   }
 
 function checkName(){
-    let input = document.getElementById("name").value;
-    if (input == "") {
-        openWarning();
+    var name = document.getElementById("name");
+    if (name.value === "") {
+        openWarningName();
     }
     else {
-        document.getElementById('button').addEventListener('click', () => window.open("BirthdayGender.html"))
+        window.location.href = "birthdaygender.html";
     }
 }
-
-function openWarning() {
-    var warning = document.getElementById("warningName");
-    warning.classList.add("active");
-  }
