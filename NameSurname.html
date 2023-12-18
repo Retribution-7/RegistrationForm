@@ -11,7 +11,7 @@
         <h1 align="center">Создать аккаунт</h1>
         <div>
             <p>Имя</p>
-            <input class="gradient" type="text" id="name">
+            <input class="gradient" type="text" id="name" placeholder="(Обязательное поле)">
         </div>
 
         <div>
@@ -19,14 +19,14 @@
             <input class="gradient" type="text" placeholder="(Не обязательное поле)">
         </div>
         <br>
-        <div id="warningName" class="warning">
+        <div id="warningName" class="warning" style="top: 30%; left: 27%">
             <div align="center">
-                Ошибка: введите имя.
+                Введите имя.
             </div>
             
           </div>
-        <button class="button" id="button" onclick="checkName()">Далее</button>
+        <button class="button" onclick="checkName()">Далее</button>
     </div>
-
+    <script src="registration.js"></script>
 </body>
 </html>
